@@ -1,0 +1,85 @@
+body {
+  width: 1152px;
+  height: 396px;
+}
+.card-container {
+  width: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.image-container {
+  width: 10%;
+  padding-right: 190px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 400;
+}
+.h4 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #21243d;
+}
+.paragraph {
+  font-family: "Heebo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #21243d;
+}
+#badge {
+  height: 25px;
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 16px;
+  background-color: #21243d;
+  color: #ffffff;
+}
+#dash {
+  height: 34px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #8695a4;
+}
+.hr {
+  border: 1px solid #e0e0e0;
+  padding-left: 146px;
+}
+
+.footer-images {
+  background-color: #ffffff;
+  margin-top: 83px;
+  display: flex;
+  justify-content: center;
+}
+.instagram {
+  width: 30px;
+  height: 30px;
+  color: #21243d;
+  padding-left: 30px;
+}
+.fb {
+  width: 30px;
+  height: 30px;
+  color: #21243d;
+  padding-left: 30px;
+}
+.linkedin {
+  width: 30px;
+  height: 30px;
+  color: #21243d;
+  padding-left: 30px;
+}
+
+.twitter {
+  width: 30px;
+  height: 30px;
+  color: #21243d;
+  padding-left: 30px;
+}
+
+/* @media (max-width: 1440px) { */
+.body {
+  color: #21243d;
+}

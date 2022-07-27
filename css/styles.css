@@ -1,0 +1,218 @@
+body {
+  font-family: "Heebo", sans-serif;
+  margin: 0;
+}
+
+.nav {
+  padding: 27px;
+  padding-right: 60px;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: right;
+}
+
+.nav .works {
+  margin-right: 33px;
+}
+
+.nav .blog {
+  margin-right: 33px;
+}
+
+.main-container-padding {
+  padding: 0px 148px;
+}
+
+.pic-png {
+  width: 243px;
+  height: 243px;
+  border: 0px;
+  border-radius: 50%;
+}
+button {
+  color: red;
+}
+
+.personal-section {
+  padding-top: 158px;
+  padding-bottom: 71px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal-info-container {
+  width: 506px;
+}
+
+.personal-info-header {
+  font-size: 44px;
+  font-weight: 700;
+  padding-bottom: 40px;
+}
+
+.personal-text {
+  font-size: 16px;
+  font-weight: 400;
+  padding-bottom: 38px;
+}
+
+.download-resume-btn {
+  font-weight: 500;
+  font-size: 20px;
+  background-color: #ff6464;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 95px;
+  padding-top: 9px;
+  padding-bottom: 17px;
+}
+
+.personal-pic-container {
+  height: 250px;
+  width: 250px;
+}
+
+.recent-post-section {
+  background: #edf7fa;
+}
+
+.recent-post-container {
+  display: flex;
+  justify-content: space-between;
+  background: #edf7fa;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Recent-post {
+  font-weight: 400;
+  font-size: 22px;
+  padding-top: 7px;
+  margin-right: 20px;
+  padding-bottom: 2px;
+}
+.recent-post-tags {
+  color: blue;
+}
+
+#paragraph-header {
+  font-family: "Heebo", sans-serif;
+  align-self: auto;
+  font-size: 26px;
+  font-weight: 700;
+  font-style: normal;
+  color: black;
+}
+
+#paragraph-style {
+  color: black;
+  font-size: 19px;
+  font-weight: 400;
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  line-height: 24px;
+}
+
+h5 {
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  font-style: normal;
+  display: flex;
+}
+
+#paragraph-header-2 {
+  font-family: "Heebo", sans-serif;
+  font-size: 26px;
+  color: #000000;
+}
+.header-2 {
+  color: red;
+}
+.card-container {
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.image-container {
+  width: 10%;
+  padding-right: 190px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 400;
+}
+.h4 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #21243d;
+}
+.paragraph {
+  font-family: "Heebo", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #21243d;
+}
+#badge {
+  height: 25px;
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 16px;
+  background-color: #21243d;
+  color: #ffffff;
+}
+#dash {
+  height: 34px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #8695a4;
+}
+.hr {
+  border: 1px solid #e0e0e0;
+  padding-left: 146px;
+}
+
+.footer-images {
+  background-color: #ffffff;
+  margin-top: 83px;
+  display: flex;
+  justify-content: center;
+}
+.instagram {
+  width: 30px;
+  height: 30px;
+  color: #21243d;
+  padding-left: 30px;
+}
+.fb {
+  width: 30px;
+  height: 30px;
+  color: #21243d;
+  padding-left: 30px;
+}
+.linkedin {
+  width: 30px;
+  height: 30px;
+  color: #21243d;
+  padding-left: 30px;
+}
+
+.twitter {
+  width: 30px;
+  height: 30px;
+  color: #21243d;
+  padding-left: 30px;
+}
