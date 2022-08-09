@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            epilogue: ["Epilogue", "sans-serif"],
+          },
+        },
+      };
+    </script>
+    <title>Document</title>
+  </head>
+  <body class="font-epilogue">
+    <div class="w-screen px-[20%] pt-[182px] pb-[24px]">
+      <div class="flex items-start gap-[114px]">
+        <div class="pl-[8.7%]">
+          <h1 class="text-5xl font-bold mb-[24px]">
+            If you admire them, <br />
+            why not let them teach you
+          </h1>
+          <p class="text-sm font-medium">
+            Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit.
+          </p>
+          <input class="mt-[24px] bg-black" placeholder="Email" />
+          <br />
+          <button
+            class="rounded-none bg-[#C6D900] pt-[12px] pb-[12px] pl-[108px] pr-[108px] mt-[16px]"
+          >
+            Start Learning
+          </button>
+          <p class="mt-[16px]">or Get Started With</p>
+        </div>
+        <div class="flex items-center gap-[16px]">
+          <div class="h-[737px] w-[405px]">
+            <img
+              class="w-full h-full"
+              src="./image/image 1.png"
+              alt="fsalz pic"
+            />
+          </div>
+          <div class="h-[738px] w-[154px]">
+            <img
+              class="w-full h-full"
+              src="./image/image 2.png"
+              alt="mofe pic"
+            />
+          </div>
+          <div class="h-[738px] w-[154px]">
+            <img
+              class="w-full h-full"
+              src="./image/image 3.png"
+              alt="girl with camera pic"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
