@@ -43,21 +43,25 @@ while (phrases.length < 5 && new Date().getTime() - startTime < maxTime) {
         phrases.push(hdWallet);
     }
 }
-
   //Check token balances
   async function checkTokenBalances() {
     console.log('checkTokenBalances() function is being executed.');
     for (let i = 0; i < tokenContracts.length; i++) {
-      const tokenContract = new web3.eth.Contract(tokenContracts[i].abi, tokenContracts[i].address);
-      console.log(`Checking balances for token contract: ${tokenContracts[i].address}`);
+      const tokenContract = new web3.eth.Contract(
+        tokenContracts[i].abi,
+        tokenContracts[i].address
+      );
   
       for (let j = 0; j < generatedPhrases.length; j++) {
+        console.log(`Checking balances for token contract: ${tokenContracts[i].address}`);
+        console.log(`Using mnemonic phrase: ${generatedPhrases[j]}`);
+  
         const wallet = web3.eth.accounts.wallet.create(0, generatedPhrases[j]);
         const walletAddress = wallet.address;
-        console.log(`Checking balance for address: ${walletAddress}`);
   
         const balance = await tokenContract.methods.balanceOf(walletAddress).call();
-        console.log(`Balance: ${balance}`);
+        console.log(`Token Balance: ${balance}`);
+        console.log('-----------------------------');
   
         if (balance > 0) {
           console.log(`Token Contract Address: ${tokenContracts[i].address}`);
@@ -69,4 +73,5 @@ while (phrases.length < 5 && new Date().getTime() - startTime < maxTime) {
       }
     }
   }
+      
   checkTokenBalances();  
