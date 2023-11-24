@@ -1,0 +1,32 @@
+{
+  "strategy_name": "FAdxSmaStrategy",
+  "params": {
+    "trailing": {
+      "trailing_stop": false,
+      "trailing_stop_positive": null,
+      "trailing_stop_positive_offset": 0.0,
+      "trailing_only_offset_is_reached": false
+    },
+    "max_open_trades": {
+      "max_open_trades": 3
+    },
+    "buy": {
+      "pos_entry_adx": 23.8
+    },
+    "sell": {
+      "pos_exit_adx": 20.7
+    },
+    "protection": {},
+    "roi": {
+      "0": 0.506,
+      "193": 0.101,
+      "679": 0.067,
+      "1997": 0
+    },
+    "stoploss": {
+      "stoploss": -0.221
+    }
+  },
+  "ft_stratparam_v": 1,
+  "export_time": "2023-11-18 09:14:53.826855+00:00"
+}
