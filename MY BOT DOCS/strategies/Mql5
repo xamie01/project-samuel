@@ -1,0 +1,109 @@
+// Define parameters
+input int buy_rsi_fast_32 = 40;
+input int buy_rsi_32 = 34;
+input double buy_sma15_32 = 0.974;
+input double buy_cti_32 = -0.69;
+input int sell_fastx = 89;
+input double trailing_stop_positive_offset = 0.0;
+input int max_open_trades = 3;
+input double stoploss = -0.316;
+
+// Define variables
+int TMP_HOLD = 0;
+
+// Define timeframes
+input ENUM_TIMEFRAMES timeframe = 5;
+input int startup_candle_count = 120;
+
+// Define functions
+void OnTick()
+{
+    double rsi_slow = iRSI(_Symbol, timeframe, 20, PRICE_CLOSE, 0);
+    double rsi_fast = iRSI(_Symbol, timeframe, 4, PRICE_CLOSE, 0);
+    double rsi = iRSI(_Symbol, timeframe, 14, PRICE_CLOSE, 0);
+    double sma_15 = iMA(_Symbol, timeframe, 15, 0, MODE_SMA, PRICE_CLOSE, 0);
+    double cti = iCustom(_Symbol, timeframe, "pandas_ta", "cti", 20, 0, 0);
+
+    // Add your trading logic here
+    if (rsi_slow < iRSI(_Symbol, timeframe, 20, PRICE_CLOSE, 1) &&
+        rsi_fast < buy_rsi_fast_32 &&
+        rsi > buy_rsi_32 &&
+        iClose(_Symbol, timeframe, 0) < sma_15 * buy_sma15_32 &&
+        cti < buy_cti_32)
+    {
+        // Place buy order
+        OrderSend(_Symbol, OP_BUY, 1.0, Ask, 3, 0, 0, "Buy Signal", 0, 0, Green);
+    }
+
+    // Add your exit conditions here
+    if (OrderSymbol() == _Symbol && OrderMagicNumber() == MagicNumber)
+    {
+        double current_profit = OrderProfit();
+        datetime current_time = iTime(_Symbol, timeframe, 0);
+        double fastk = iCustom(_Symbol, timeframe, "pandas_ta", "fastk", 5, 3, 0, 3, 0, 0);
+
+        if (current_time - OrderOpenTime() < 90 * 60 && current_profit >= 0.08)
+        {
+            // Close based on profit within the first 90 minutes
+            OrderClose(OrderTicket(), OrderLots(), Bid, 3, Green);
+        }
+        else if (current_time - OrderOpenTime() > 3 * 60 * 60 && fastk >= 70 && current_profit >= 0)
+        {
+            // Close based on fastk condition after 3 hours
+            OrderClose(OrderTicket(), OrderLots(), Bid, 3, Green);
+        }
+        else if (current_time - OrderOpenTime() > 4 * 60 * 60 && current_profit > -0.06)
+        {
+            // Close based on profit after 4 hours
+            OrderClose(OrderTicket(), OrderLots(), Bid, 3, Red);
+        }
+        else if (current_profit > 0 && fastk > sell_fastx)
+        {
+            // Close based on profit and fastx condition
+            OrderClose(OrderTicket(), OrderLots(), Bid, 3, Red);
+        }
+        else if (current_profit <= -0.1 && !IsOrderInTMPHold(OrderTicket()))
+        {
+            // Temporary hold condition
+            AddOrderToTMPHold(OrderTicket());
+        }
+
+        for (int i = 0; i < ArraySize(TMP_HOLD); i++)
+        {
+            // Recover and sell condition
+            if (OrderTicket() == TMP_HOLD[i] && current_profit > -0.1 && fastk > sell_fastx)
+            {
+                RemoveOrderFromTMPHold(OrderTicket());
+                OrderClose(OrderTicket(), OrderLots(), Bid, 3, Red);
+            }
+        }
+    }
+}
+
+bool IsOrderInTMPHold(int ticket)
+{
+    for (int i = 0; i < ArraySize(TMP_HOLD); i++)
+    {
+        if (ticket == TMP_HOLD[i])
+            return true;
+    }
+    return false;
+}
+
+void AddOrderToTMPHold(int ticket)
+{
+    ArrayResize(TMP_HOLD, ArraySize(TMP_HOLD) + 1);
+    TMP_HOLD[ArraySize(TMP_HOLD) - 1] = ticket;
+}
+
+void RemoveOrderFromTMPHold(int ticket)
+{
+    for (int i = 0; i < ArraySize(TMP_HOLD); i++)
+    {
+        if (ticket == TMP_HOLD[i])
+        {
+            ArrayRemove(TMP_HOLD, i);
+            break;
+        }
+    }
+}
