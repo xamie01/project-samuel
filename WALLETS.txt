@@ -1,0 +1,25 @@
+PRIVATE KEYS 
+WALLET 1 = 0698f7f6070d801b3066c6a3257ab4c8bfb48d4a214884cae57252ac61a06881
+WALLET 2 = 101731c8c0d7feee2c1730251d2c73a9c0e7575de51367aa7dbddd3883c4ccd0
+WALLET 3 = ec6c1fa832d2ce19917d2a7012c0d042b38e74224e5da75caa11943a73c71e92
+WALLET4 = f7528f2dbef24b0184b572584492f130dfd76d733614b26fa9525f355ce369bf
+WALLET 5 = 3d96be9ec598374cc796f003b568f57ee4bd39eae1c2e5a5818e496834b07571
+WALLET 6 = 0698f7f6070d801b3066c6a3257ab4c8bfb48d4a214884cae57252ac61a06881
+pill
+business
+south
+narrow
+member
+balcony
+fiber
+knee
+wheel
+program
+breeze
+head
+
+ECLIPSE TESTNET MNEMONIC PHRASE
+wonder hybrid gesture consider upset genius ensure loyal happy mixture high kiwi
+
+Critria Unique deposit address
+tb1p3dvsltx6w49uuzhysek8csdsnsy2vvhuthu7mk65vlv8xm8autusqul4ya
