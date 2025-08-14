@@ -1,0 +1,24 @@
+{
+  "name": "eth-arb-final-telegram",
+  "version": "0.1.0",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:sepolia": "hardhat run scripts/deploy_sepolia.js --network sepolia",
+    "demo": "node js-bot/demo.js",
+    "monitor": "node js-bot/monitor.js",
+    "start-telegram": "node js-bot/telegram.js"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "dotenv": "^16.0.0",
+    "node-fetch": "^2.6.7",
+    "@flashbots/ethers-provider-bundle": "^0.3.0",
+    "node-telegram-bot-api": "^0.61.0"
+  },
+  "devDependencies": {
+    "hardhat": "^2.14.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.0",
+    "@aave/core-v3": "^1.0.0",
+    "@openzeppelin/contracts": "^4.8.0"
+  }
+}
